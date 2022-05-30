@@ -1,0 +1,24 @@
+<html>
+<head>
+	<title>
+		Fields of Projects
+	</title>
+	
+	<style>
+		table, th, td {
+		border:1px solid black;
+		}
+	</style>
+</head>
+
+<body>
+	  {% for t in result %}
+		<div>
+			<p>{{t[0]}}</p>
+			<form action="{{ url_for('grab_field_projects', field=t[0]) }}" method="post">
+			<p><input type="submit" value="Expand {{t[0]}} Projects"/></p></form>
+		</div>
+	  {% endfor %}
+</body>
+
+</html>

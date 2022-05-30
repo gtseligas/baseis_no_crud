@@ -1,0 +1,45 @@
+<html>
+<head>
+	<title>
+		{{field}}
+	</title>
+	
+	<style>
+		table, th, td {
+		border:1px solid black;
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+	{% if projects is defined and projects|length > 0%}
+		<p>Active projects in {{field}}</p>
+		<table>
+		  <tr><th>Title</th><th>Description</th><th>Start date</th><th>End date</th><th>Funding</th><th>Grading</th><th>Grading date</th></tr>
+		  {% for t in projects %}
+			<tr><td>{{t[0]}}</td><td>{{t[1]}}</td><td>{{t[2]}}</td><td>{{t[3]}}</td><td>{{t[4]}}</td><td>{{t[5]}}</td><td>{{t[6]}}</td></tr>
+		  {% endfor %}
+		</table>
+	{% else %}
+		<p>No active projects currently in {{field}}</p>
+	{% endif %}
+	</div>
+	
+	<div>
+	{% if researchers is defined and researchers|length > 0%}
+		<p>Researchers that worked in {{field}} this year</p>
+		<table>
+		  <tr><th>Name</th><th>Gender</th><th>Birth date</th><th>Hire date</th></tr>
+		  {% for t in researchers %}
+			{% set name = t[0] + " " + t[1] %}
+			<tr><td>{{name}}</td><td>{{t[2]}}</td><td>{{t[3]}}</td><td>{{t[4]}}</td></tr>
+		  {% endfor %}
+		</table>
+	{% else %}
+		<p>No researchers worked in {{field}} this year</p>
+	{% endif %}
+	</div>
+</body>
+
+</html>

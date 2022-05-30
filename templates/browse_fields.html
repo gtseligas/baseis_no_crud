@@ -1,0 +1,23 @@
+<html>
+<head>
+	<title>
+		Research fields
+	</title>
+	
+	<style>
+		table, th, td {
+		border:1px solid black;
+		}
+	</style>
+</head>
+
+<body>
+	{% for t in result %}
+		<div>
+			<form action="{{ url_for('browse_field', field=t[0], title=t[1]) }}" method="post">
+			<p><input type="submit" value="Active {{t[1]}} Projects and Researchers"/></p></form>
+		</div>
+	{% endfor %}
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<html>
+<head>
+	<title>
+		Projects of {{ name }}
+	</title>
+	
+	<style>
+		table, th, td {
+		border:1px solid black;
+		}
+	</style>
+</head>
+
+<body>
+	<table>
+	  <tr><th>Project</th><th>Description</th></tr>
+	  {% for t in result %}
+		<tr><td>{{t[0]}}</td><td>{{t[1]}}</td></tr>
+	  {% endfor %}
+	</table>
+</body>
+
+</html>

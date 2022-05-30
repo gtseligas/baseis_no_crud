@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>
+		Browse with criteria
+	</title>
+	
+	<style>
+		table, th, td {
+		border:1px solid black;
+		}
+	</style>
+</head>
+
+<body>
+	<form action="criteria_refresh" method="POST">
+		<input name="date" placeholder="Insert project start date">
+		<input name="duration" placeholder="Insert project duration(years)" >
+		<input name="executive" placeholder="Insert executive name">
+		<input type="submit">
+	</form>
+	
+	{% if result is defined %} 
+	<table>
+	  <tr><th>Project</th><th>Description</th><th>Start date</th><th>End date</th><th>Amount</th><th>Expand researchers</th></tr>
+	  {% for t in result %}
+		<tr><td>{{t[0]}}</td><td>{{t[1]}}</td><td>{{t[2]}}</td><td>{{t[3]}}</td><td>{{t[4]}}</td><td><form action="{{ url_for('expand_researchers', title = t[0], start_date=t[2])}}" method="post"><input type="submit" value="Browse researchers"></form></td></tr>
+	  {% endfor %}
+	</table>
+	{% endif %}
+</body>
+
+</html>

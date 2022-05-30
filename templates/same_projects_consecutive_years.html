@@ -1,0 +1,27 @@
+<html>
+<head>
+	<title>
+		Organisations with same number of projects in consecutive years(at least 10 annually)
+	</title>
+	
+	<style>
+		table, th, td {
+		border:1px solid black;
+		}
+	</style>
+</head>
+
+<body>
+	  {% if result is defined and result|length > 0%}
+		  <table>
+		  <tr><th>Organisation</th><th>Project count</th><th>First year</th><th>Second year</th></tr>
+		  {% for t in result %}
+			<tr><td>{{t[0]}}</td><td>{{t[1]}}</td><td>{{t[2]}}</td><td>{{t[3]}}</td></tr>		
+		  {% endfor %}
+		  </table> 
+	  {% else %}
+		<p>No such organisations exist</p>
+	  {% endif %}	  
+</body>
+
+</html>

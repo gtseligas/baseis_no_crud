@@ -1,0 +1,25 @@
+<html>
+<head>
+	<title>
+		Researchers with many projects without deliverables
+	</title>
+	
+	<style>
+		table, th, td {
+		border:1px solid black;
+		}
+	</style>
+</head>
+
+<body>
+
+	<table>
+		<tr><th>Researcher</th><th>No deliverable projects</th><tr>
+			{% for t in result %}
+				{% set name = t[0] + " " + t[1] %}
+			  <tr><td>{{name}}</td><td>{{t[2]}}</td></tr>
+			{% endfor %}
+	</table>
+</body>
+
+</html>

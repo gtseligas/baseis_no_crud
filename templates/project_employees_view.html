@@ -1,0 +1,29 @@
+<html>
+<head>
+	<title>
+		Researchers in Projects
+	</title>
+	
+	<style>
+		table, th, td {
+		border:1px solid black;
+		}
+		div {
+			border-block: 1px solid black;
+		}
+	</style>
+</head>
+
+<body>
+	{% for t in result %}
+		{% set title = t[0] %}
+		<div>
+			<p>{{title}}</p>
+			<form action="{{ url_for('grab_employee_projects', title = t[0])}}" method="post">
+			<p><input type="submit" value="Expand {{title}} Projects"/></p></form>
+		</div>
+	{% endfor %}
+	</table>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<html>
+<head>
+	<title>
+		Top Projects
+	</title>
+	
+	<style>
+		table, th, td {
+		border:1px solid black;
+		}
+	</style>
+</head>
+
+<body>
+
+	<table>
+	  <tr><th>Field 1</th><th>Field 2</th><th>Projects</th></tr>
+	  {% for t in result %}
+		<tr><td>{{t[0]}}</td><td>{{t[1]}}</td><td>{{t[2]}}</td></tr>
+	  {% endfor %}
+	</table>
+</body>
+
+</html>
