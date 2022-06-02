@@ -261,7 +261,56 @@ def researcher_update():
 
     execute_crud(connection, queries.update_researcher(selected_first_name, selected_last_name, first_name, last_name, gender, birth_date, hire_date, org_id), cursor)
     
-    return render_template("crud_page.html")          
+    return render_template("crud_page.html")
+
+@app.route('/project_insert', methods=['POST'])
+def project_insert():
+    start_date = request.form['start_date']
+    end_date = request.form['end_date']
+    description = request.form['description']
+    title = request.form['title']
+    amount = request.form['amount']
+    grade = request.form['grade']
+    grade_date = request.form['grade_date']
+    executive_id = request.form['executive_id']
+    organisation_id = request.form['organisation_id']
+    grader_id = request.form['grader_id']
+    program_id = request.form['program_id']
+    
+    execute_crud(connection, queries.insert_project(start_date, end_date, description, title, amount, grade, grade_date, executive_id, organisation_id, grader_id, program_id), cursor)
+    
+    return render_template("crud_page.html")    
+ 
+@app.route('/project_delete', methods=['POST'])
+def project_delete():
+    title = request.form['title']
+    start_date = request.form['start_date']
+
+    execute_crud(connection, queries.delete_project(title, start_date), cursor)
+    
+    return render_template("crud_page.html")  
+ 
+@app.route('/project_update', methods=['POST'])
+def project_update():
+    # title,start date of project to be updated
+    selected_title = request.form['selected_title']
+    selected_start_date = request.form['selected_start_date']
+    
+    start_date = request.form['start_date']
+    end_date = request.form['end_date']
+    description = request.form['description']
+    title = request.form['title']
+    amount = request.form['amount']
+    grade = request.form['grade']
+    grade_date = request.form['grade_date']
+    executive_id = request.form['executive_id']
+    organisation_id = request.form['organisation_id']
+    grader_id = request.form['grader_id']
+    program_id = request.form['program_id']
+
+    execute_crud(connection, queries.update_project(selected_title, selected_start_date, start_date, end_date, description, title, amount, grade, grade_date, executive_id, organisation_id, grader_id, program_id), cursor)
+    
+    return render_template("crud_page.html")
  
 if __name__ == "__main__":
     app.run(debug=True)

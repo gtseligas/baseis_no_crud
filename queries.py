@@ -79,3 +79,14 @@ def delete_researcher(first_name, last_name):
     
 def update_researcher(selected_first_name, selected_last_name, first_name, last_name, birth_date, hire_date, gender, org_id):
     return "Update researcher set first_name='" + first_name + "', last_name='" + last_name + "', hire_date='" + hire_date + "', organisation_id='" + org_id + "', birth_date='" + birth_date + "', gender='" + gender + "' where first_name='" + selected_first_name + "' and last_name='" + selected_last_name + "'"
+
+def insert_project(start_date,end_date,description,title,amount,grade,grade_date,executive_id,org_id,grader_id,program_id):
+    return "Insert into project (`start_date`,`end_date`,`project_description`,`title`,`amount`,`grade`,`grade_date`,`executive_id`,`organisation_id`,`grader_id`,`program_id`) values('" + start_date + "','" + end_date + "','" + description + "','" + title + "','" + amount + "','" + grade + "','" + grade_date + "','"+ executive_id + "','" + org_id + "','" + grader_id + "','" + program_id + "')"
+
+def delete_project(title, start_date):
+    return "Delete from project where title='" + title + "' and start_date = '" + start_date + "'"
+    
+def update_project(selected_title, selected_start_date, start_date,end_date,description,title,amount,grade,grade_date,executive_id,org_id,grader_id,program_id):
+    return "update project set start_date='" + start_date + "', end_date='" + end_date + "',project_description='" + description + "',title='" + title + "',amount='" + amount + "',grade='" + grade + "',grade_date='" + grade_date + "',executive_id='"+ executive_id + "',organisation_id='" + org_id + "',grader_id='" + grader_id + "',program_id='" + program_id + "' where start_date='" + selected_start_date + "' and title='" + selected_title + "'"
+
+ 
