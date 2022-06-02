@@ -70,3 +70,12 @@ def top_researchers():
 
 def expand_researcher(title, start_date):
     return " select r.first_name, r.last_name, r.gender, r.birth_date, r.hire_date from researcher r inner join researcher_project rp on r.researcher_id = rp.researcher_id inner join project p on rp.project_id = p.project_id where p.title = '" + title +"' and p.start_date = '" + start_date+"'"
+    
+def insert_researcher(first_name, last_name, birth_date, hire_date, gender, org_id):
+    return "Insert into researcher (`first_name`,`last_name`,`hire_date`,`organisation_id`,`birth_date`,`gender`) values('" + first_name + "','" + last_name + "','" + hire_date + "','" + org_id + "','" + birth_date + "','" + gender + "')"
+
+def delete_researcher(first_name, last_name):
+    return "Delete from researcher where first_name='" + first_name + "' and last_name = '" + last_name + "'"
+    
+def update_researcher(selected_first_name, selected_last_name, first_name, last_name, birth_date, hire_date, gender, org_id):
+    return "Update researcher set first_name='" + first_name + "', last_name='" + last_name + "', hire_date='" + hire_date + "', organisation_id='" + org_id + "', birth_date='" + birth_date + "', gender='" + gender + "' where first_name='" + selected_first_name + "' and last_name='" + selected_last_name + "'"
