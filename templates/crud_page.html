@@ -46,6 +46,50 @@
 		<input type="submit">
 	</form>
 	
+	
+	<h5>Project Insertion</h5>
+	<form action="/project_insert" method="POST">
+		<input name="start_date" placeholder="Insert project start date">	
+		<input name="end_date" placeholder="Insert project end date">
+		<input name="description" placeholder="Insert project description">
+		<input name="title" placeholder="Insert project title">
+		<input name="amount" placeholder="Insert project amount">
+		<input name="grade" placeholder="Insert project grade">
+		<input name="grade_date" placeholder="Insert project grade date">
+		<input name="executive_id" placeholder="Insert project executive id">
+		<input name="organisation_id" placeholder="Insert project organisation id">
+		<input name="program_id" placeholder="Insert project program id">
+		<input name="grader_id" placeholder="Insert project grader id">
+		<input type="submit">
+	</form>
+	
+	<h5>Project Deletion</h5>
+	<form action="/project_delete" method="POST">
+		<input name="title" placeholder="Insert project title">	
+		<input name="start_date" placeholder="Insert project start date">
+		<input type="submit">
+	</form>
+	
+	<h5>Project Update</h5>
+	<form action="/project_update" method="POST">
+		<p>Select a project to update</p>
+		<input name="selected_title" placeholder="Select project's title">	
+		<input name="selected_start_date" placeholder="Select project's start date">
+		
+		<p>Insert values to update with</p>
+		<input name="start_date" placeholder="Insert project start date">	
+		<input name="end_date" placeholder="Insert project end date">
+		<input name="description" placeholder="Insert project description">
+		<input name="title" placeholder="Insert project title">
+		<input name="amount" placeholder="Insert project amount">
+		<input name="grade" placeholder="Insert project grade">
+		<input name="grade_date" placeholder="Insert project grade date">
+		<input name="executive_id" placeholder="Insert project executive id">
+		<input name="organisation_id" placeholder="Insert project organisation id">
+		<input name="program_id" placeholder="Insert project program id">
+		<input name="grader_id" placeholder="Insert project grader id">
+		<input type="submit">
+	</form>
 	 
 </body>
 
