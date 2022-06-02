@@ -1,0 +1,52 @@
+<html>
+<head>
+	<title>
+		Insert-Delete-Update
+	</title>
+	
+	<style>
+		table, th, td {
+		border:1px solid black;
+		}
+	</style>
+</head>
+
+<body>
+	<h5>Researcher Insertion</h5>
+	<form action="/researcher_insert" method="POST">
+		<input name="first_name" placeholder="Insert researcher first name">	
+		<input name="last_name" placeholder="Insert researcher last name">
+		<input name="gender" placeholder="Insert gender">
+		<input name="birth_date" placeholder="birth date as yyyy-mm-dd">
+		<input name="hire_date" placeholder="hire date as yyyy-mm-dd">
+		<input name="organisation_id" placeholder="Insert organisation id">
+		<input type="submit">
+	</form>
+	
+	<h5>Researcher Deletion</h5>
+	<form action="/researcher_delete" method="POST">
+		<input name="first_name" placeholder="Insert researcher first name">	
+		<input name="last_name" placeholder="Insert researcher last name">
+		<input type="submit">
+	</form>
+	
+	<h5>Researcher Update</h5>
+	<form action="/researcher_update" method="POST">
+		<p>Select a researcher to update</p>
+		<input name="selected_first_name" placeholder="Select researcher's first name">	
+		<input name="selected_last_name" placeholder="Select researcher's last name">
+		
+		<p>Insert values to update with</p>
+		<input name="first_name" placeholder="Insert researcher first name">	
+		<input name="last_name" placeholder="Insert researcher last name">
+		<input name="gender" placeholder="Insert gender">
+		<input name="birth_date" placeholder="birth date as yyyy-mm-dd">
+		<input name="hire_date" placeholder="hire date as yyyy-mm-dd">
+		<input name="organisation_id" placeholder="Insert organisation id">
+		<input type="submit">
+	</form>
+	
+	 
+</body>
+
+</html>
