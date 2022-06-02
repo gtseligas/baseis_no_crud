@@ -213,6 +213,55 @@ def top_researchers():
     temp = execute_query(connection, queries.top_researchers(), cursor)
     print(temp)
     return render_template("top_researchers.html", result = temp)
+
+def execute_crud(connection, query, cursor): 
+    cursor.execute(query)
+    connection.commit()
+    print("inserted")
+   
+@app.route('/crud_page', methods=['POST']) 
+def crud_page():
+    return render_template("crud_page.html") 
+
+@app.route('/researcher_insert', methods=['POST'])
+def researcher_insert():
+    first_name = request.form['first_name']
+    last_name = request.form['last_name']
+    gender = request.form['gender']
+    birth_date = request.form['birth_date']
+    hire_date = request.form['hire_date']
+    org_id = request.form['organisation_id']
+
+    execute_crud(connection, queries.insert_researcher(first_name, last_name, gender, birth_date, hire_date, org_id), cursor)
     
+    return render_template("crud_page.html")
+
+@app.route('/researcher_delete', methods=['POST'])
+def researcher_delete():
+    first_name = request.form['first_name']
+    last_name = request.form['last_name']
+
+    execute_crud(connection, queries.delete_researcher(first_name, last_name), cursor)
+    
+    return render_template("crud_page.html")    
+
+@app.route('/researcher_update', methods=['POST'])
+def researcher_update():
+    # first and last name of researcher to be updated
+    selected_first_name = request.form['selected_first_name']
+    selected_last_name = request.form['selected_last_name']
+    
+    # values to update the researcher
+    first_name = request.form['first_name']
+    last_name = request.form['last_name']
+    gender = request.form['gender']
+    birth_date = request.form['birth_date']
+    hire_date = request.form['hire_date']
+    org_id = request.form['organisation_id']
+
+    execute_crud(connection, queries.update_researcher(selected_first_name, selected_last_name, first_name, last_name, gender, birth_date, hire_date, org_id), cursor)
+    
+    return render_template("crud_page.html")          
+ 
 if __name__ == "__main__":
     app.run(debug=True)
