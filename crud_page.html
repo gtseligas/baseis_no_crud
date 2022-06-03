@@ -1,0 +1,236 @@
+<html>
+<head>
+	<title>
+		Insert-Delete-Update
+	</title>
+	
+	<style>
+		table, th, td {
+		border:1px solid black;
+		}
+		div {
+			border-block: 2px solid red;
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+		<h5>Search all data stored</h5>
+		<form style="display: inline;" action="/search_researchers" method="POST">
+			<input type="submit" value="Search researchers">
+		</form>
+		<form style="display: inline;" action="/search_projects" method="POST">
+			<input type="submit" value="Search projects">
+		</form>
+		<form style="display: inline;" action="/search_programs" method="POST">
+			<input type="submit" value="Search programs">
+		</form>
+		<form style="display: inline;" action="/search_organisations" method="POST">
+			<input type="submit" value="Search organisations">
+		</form>
+		<form style="display: inline;" action="/search_corporations" method="POST">
+			<input type="submit" value="Search corporations">
+		</form>
+		<form style="display: inline;" action="/search_universities" method="POST">
+			<input type="submit" value="Search universities">
+		</form>
+		<form style="display: inline;" action="/search_research_centers" method="POST">
+			<input type="submit" value="Search research centers">
+		</form>
+		<form style="display: inline;" action="/search_phones" method="POST">
+			<input type="submit" value="Search organisation phones">
+		</form>
+		<form style="display: inline;" action="/search_executives" method="POST">
+			<input type="submit" value="Search executives">
+		</form>
+		<form style="display: inline;" action="/search_research_fields" method="POST">
+			<input type="submit" value="Search research fields">
+		</form>
+		<form style="display: inline;" action="/search_project_fields" method="POST">
+			<input type="submit" value="Search project fields">
+		</form>
+		<form style="display: inline;" action="/search_deliverables" method="POST">
+			<input type="submit" value="Search deliverables">
+		</form>
+		<form style="display: inline;" action="/search_researcher_projects" method="POST">
+			<input type="submit" value="Search researcher's projects">
+		</form>
+	</div>
+	
+	<div>
+	<h5>Researcher Insertion</h5>
+	<form action="/researcher_insert" method="POST">
+		<input name="first_name" placeholder="Insert researcher first name">	
+		<input name="last_name" placeholder="Insert researcher last name">
+		<input name="gender" placeholder="Insert gender">
+		<input name="birth_date" placeholder="birth date as yyyy-mm-dd">
+		<input name="hire_date" placeholder="hire date as yyyy-mm-dd">
+		<input name="organisation_id" placeholder="Insert organisation id">
+		<input type="submit">
+	</form>
+	
+	<h5>Researcher Deletion</h5>
+	<form action="/researcher_delete" method="POST">
+		<input name="first_name" placeholder="Insert researcher first name">	
+		<input name="last_name" placeholder="Insert researcher last name">
+		<input type="submit">
+	</form>
+	
+	<h5>Researcher Update</h5>
+	<form action="/researcher_update" method="POST">
+		<p>Select a researcher to update</p>
+		<input name="selected_first_name" placeholder="Select researcher's first name">	
+		<input name="selected_last_name" placeholder="Select researcher's last name">
+		
+		<p>Insert values to update with</p>
+		<input name="first_name" placeholder="Insert researcher first name">	
+		<input name="last_name" placeholder="Insert researcher last name">
+		<input name="gender" placeholder="Insert gender">
+		<input name="birth_date" placeholder="birth date as yyyy-mm-dd">
+		<input name="hire_date" placeholder="hire date as yyyy-mm-dd">
+		<input name="organisation_id" placeholder="Insert organisation id">
+		<input type="submit">
+	</form>
+	</div>
+	
+	<div>
+	<h5>Project Insertion</h5>
+	<form action="/project_insert" method="POST">
+		<input name="start_date" placeholder="Insert project start date">	
+		<input name="end_date" placeholder="Insert project end date">
+		<input name="description" placeholder="Insert project description">
+		<input name="title" placeholder="Insert project title">
+		<input name="amount" placeholder="Insert project amount">
+		<input name="grade" placeholder="Insert project grade">
+		<input name="grade_date" placeholder="Insert project grade date">
+		<input name="executive_id" placeholder="Insert project executive id">
+		<input name="organisation_id" placeholder="Insert project organisation id">
+		<input name="program_id" placeholder="Insert project program id">
+		<input name="grader_id" placeholder="Insert project grader id">
+		<input type="submit">
+	</form>
+	
+	<h5>Project Deletion</h5>
+	<form action="/project_delete" method="POST">
+		<input name="title" placeholder="Insert project title">	
+		<input name="start_date" placeholder="Insert project start date">
+		<input type="submit">
+	</form>
+	
+	<h5>Project Update</h5>
+	<form action="/project_update" method="POST">
+		<p>Select a project to update</p>
+		<input name="selected_title" placeholder="Select project's title">	
+		<input name="selected_start_date" placeholder="Select project's start date">
+		
+		<p>Insert values to update with</p>
+		<input name="start_date" placeholder="Insert project start date">	
+		<input name="end_date" placeholder="Insert project end date">
+		<input name="description" placeholder="Insert project description">
+		<input name="title" placeholder="Insert project title">
+		<input name="amount" placeholder="Insert project amount">
+		<input name="grade" placeholder="Insert project grade">
+		<input name="grade_date" placeholder="Insert project grade date">
+		<input name="executive_id" placeholder="Insert project executive id">
+		<input name="organisation_id" placeholder="Insert project organisation id">
+		<input name="program_id" placeholder="Insert project program id">
+		<input name="grader_id" placeholder="Insert project grader id">
+		<input type="submit">
+	</form>
+	</div>
+	
+	<div>
+		<h5>Insert a researcher as employe into a project</h5>
+		<form action="/researcher_project_insert" method="POST">
+			<input name="first_name" placeholder="Insert researcher first name">	
+			<input name="last_name" placeholder="Insert researcher last name">
+			<input name="title" placeholder="Project title">
+			<input name="start_date" placeholder="Start date yyyy-mm-dd">
+			<input type="submit">
+		</form>
+		
+		<h5>Remove a researcher from employee in a project</h5>
+		<form action="/researcher_project_delete" method="POST">
+			<input name="first_name" placeholder="Insert researcher first name">	
+			<input name="last_name" placeholder="Insert researcher last name">
+			<input name="title" placeholder="Project title">
+			<input name="start_date" placeholder="Start date yyyy-mm-dd">
+			<input type="submit">
+		</form>
+		
+		<h5>Remove a researcher from all his/her projects</h5>
+		<form action="/researcher_remove" method="POST">
+			<p>Select a researcher to remove</p>
+			<input name="first_name" placeholder="Select researcher's first name">	
+			<input name="last_name" placeholder="Select researcher's last name">
+			<input type="submit">
+		</form>
+		
+		<h5>Remove all researchers from a project</h5>
+		<form action="/project_remove" method="POST">
+			<p>Select a project to remove from</p>
+			<input name="title" placeholder="Select title">	
+			<input name="start_date" placeholder="Start date yyyy-mm-dd">
+			<input type="submit">
+		</form>
+	</div>
+	
+	<div>
+		<h5>Add a project to a research field</h5>
+		<form action="/project_field_insert" method="POST">
+			<input name="title" placeholder="Project title">
+			<input name="start_date" placeholder="Start date yyyy-mm-dd">
+			<input name="field" placeholder="Research field">
+			<input type="submit">
+		</form>
+		
+		<h5>Delete a project from a research field</h5>
+		<form action="/project_field_delete" method="POST">
+			<input name="title" placeholder="Project title">
+			<input name="start_date" placeholder="Start date yyyy-mm-dd">
+			<input name="field" placeholder="Research field">
+			<input type="submit">
+		</form>
+		
+		<h5>Remove a project from all its fields</h5>
+		<form action="/project_field_remove" method="POST">
+			<p>Select a project to remove</p>
+			<input name="title" placeholder="Project title">
+			<input name="start_date" placeholder="Start date yyyy-mm-dd">
+			<input type="submit">
+		</form>
+	</div>
+	
+	<div>
+		<h5>Add a deliverable to a project</h5>
+		<form action="/deliverable_insert" method="POST">
+			<input name="title" placeholder="Project title">
+			<input name="start_date" placeholder="Start date yyyy-mm-dd">
+			<input name="del_title" placeholder="Deliverable title">
+			<input name="desc" placeholder="Deliverable desc">
+			<input name="del_id" placeholder="Deliverable number">
+			<input name="del_date" placeholder="Delivery date yyyy-mm-dd">
+			<input type="submit">
+		</form>
+		
+		<h5>Delete a deliverable from a project</h5>
+		<form action="/deliverable_delete" method="POST">
+			<input name="title" placeholder="Project title">
+			<input name="start_date" placeholder="Start date yyyy-mm-dd">
+			<input name="del_id" placeholder="Deliverable number">
+			<input type="submit">
+		</form>
+		
+		<h5>Remove all deliverables from a project</h5>
+		<form action="/deliverables_remove" method="POST">
+			<p>Select a project to remove from</p>
+			<input name="title" placeholder="Project title">
+			<input name="start_date" placeholder="Start date yyyy-mm-dd">
+			<input type="submit">
+		</form>
+	</div>
+	
+</body>
+
+</html>
