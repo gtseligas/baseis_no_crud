@@ -258,7 +258,7 @@ def researcher_update():
     hire_date = request.form['hire_date']
     org_id = request.form['organisation_id']
 
-    execute_crud(connection, queries.update_researcher(selected_first_name, selected_last_name, first_name, last_name, gender, birth_date, hire_date, org_id), cursor)
+    execute_crud(connection, queries.update_researcher(selected_first_name, selected_last_name, first_name, last_name, birth_date, hire_date, gender,org_id), cursor)
     
     return render_template("crud_page.html")
 
@@ -414,5 +414,84 @@ def project_deliverable_remove():
     
     return render_template("crud_page.html")
 
+
+@app.route('/search_researchers', methods=['POST'])
+def search_researchers():
+    header = ['researcher id','first name','last name','gender','birth date','hire date', 'organisation id']
+    temp = execute_query(connection, "select * from researcher", cursor)
+    return render_template("search.html", result = temp, N = 7,header=header)
+    
+@app.route('/search_projects', methods=['POST'])
+def search_projects():
+    header = ['project id', 'start date','end date','description','title','amount','grade','grade date','executeive id','organisation id','program id','grader id']
+    temp = execute_query(connection, "select * from project", cursor)
+    return render_template("search.html", result = temp, N = 12,header=header)
+    
+@app.route('/search_organisations', methods=['POST'])
+def search_organisations():
+    header = ['organisation id','abbreviation','name','street','str number','psotal code','city','category']
+    temp = execute_query(connection, "select * from organisation", cursor)
+    return render_template("search.html", result = temp, N = 8,header=header)
+    
+@app.route('/search_programs', methods=['POST'])
+def search_programs():
+    header = ['program id','administration','name']
+    temp = execute_query(connection, "select * from program", cursor)
+    return render_template("search.html", result = temp, N = 3,header=header)
+    
+@app.route('/search_corporations', methods=['POST'])
+def search_corporations():
+    header = ['category', 'capital','organisation id']
+    temp = execute_query(connection, "select * from corporation", cursor)
+    return render_template("search.html", result = temp, N = 3,header=header)
+
+@app.route('/search_universities', methods=['POST'])
+def search_universities():
+    header = ['organisation id', 'budget','category']
+    temp = execute_query(connection, "select * from university", cursor)
+    return render_template("search.html", result = temp, N = 3,header=header)
+
+@app.route('/search_research_centers', methods=['POST'])
+def search_research_centers():
+    header = ['category', 'public budget','private budget','organisation id']
+    temp = execute_query(connection, "select * from research_center", cursor)
+    return render_template("search.html", result = temp, N = 4,header=header)
+
+@app.route('/search_phones', methods=['POST'])
+def search_phones():
+    header = ['phone number','organisation id']
+    temp = execute_query(connection, "select * from organisation_phone", cursor)
+    return render_template("search.html", result = temp, N = 2,header=header)
+
+@app.route('/search_executives', methods=['POST'])
+def search_executives():
+    header = ['executive id','first name', 'last name'] 
+    temp = execute_query(connection, "select * from executive", cursor)
+    return render_template("search.html", result = temp, N = 3,header=header)
+
+@app.route('/search_research_fields', methods=['POST'])
+def search_research_fields():
+    header = ['field id', 'title']
+    temp = execute_query(connection, "select * from research_field", cursor)
+    return render_template("search.html", result = temp, N = 2,header=header)
+
+@app.route('/search_project_fields', methods=['POST'])
+def search_project_fields():
+    header = ['project id', 'field id']
+    temp = execute_query(connection, "select * from project_field", cursor)
+    return render_template("search.html", result = temp, N = 2,header=header)
+
+@app.route('/search_deliverables', methods=['POST'])
+def search_deliverables():
+    header = ['deliverable id','title','description','delivery date','project id']
+    temp = execute_query(connection, "select * from deliverable order by project_id", cursor)
+    return render_template("search.html", result = temp, N = 5,header=header)
+
+@app.route('/search_researcher_projects', methods=['POST'])
+def search_researcher_projects():
+    header = ['researcher id', 'project id']
+    temp = execute_query(connection, "select * from researcher_project", cursor)
+    return render_template("search.html", result = temp, N = 2, header=header)
+    
 if __name__ == "__main__":
     app.run(debug=True)
