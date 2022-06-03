@@ -3480,6 +3480,70 @@ Insert into project
  (`project_id`,`start_date`,`end_date`,`project_description`,`title`,`amount`,`grade`,`grade_date`,`executive_id`,`organisation_id`,`program_id`,`grader_id`)
 values('144','1992-3-12','1995-11-3','The project aims at the development of an Intelligent system in ancient artifact restoration methods','EDUSAFE2','700000','75','1991-5-23','4','18','13','55');
 
+Insert into project
+ (`project_id`,`start_date`,`end_date`,`project_description`,`title`,`amount`,`grade`,`grade_date`,`executive_id`,`organisation_id`,`program_id`,`grader_id`)
+values('145','1992-3-12','1995-11-3','The project aims at the development of an Intelligent system in ancient artifact restoration methods','project1','700000','75','1991-5-23','4','18','13','55');
+
+Insert into project
+ (`project_id`,`start_date`,`end_date`,`project_description`,`title`,`amount`,`grade`,`grade_date`,`executive_id`,`organisation_id`,`program_id`,`grader_id`)
+values('146','1992-3-12','1995-11-3','The project aims at the development of an Intelligent system in ancient artifact restoration methods','project2','700000','75','1991-5-23','5','18','14','55');
+
+Insert into project
+ (`project_id`,`start_date`,`end_date`,`project_description`,`title`,`amount`,`grade`,`grade_date`,`executive_id`,`organisation_id`,`program_id`,`grader_id`)
+values('147','1992-3-12','1995-11-3','The project aims at the development of an Intelligent system in ancient artifact restoration methods','project3','700000','75','1991-5-23','4','18','13','55');
+
+Insert into project
+ (`project_id`,`start_date`,`end_date`,`project_description`,`title`,`amount`,`grade`,`grade_date`,`executive_id`,`organisation_id`,`program_id`,`grader_id`)
+values('148','1992-3-12','1995-11-3','The project aims at the development of an Intelligent system in ancient artifact restoration methods','project4','700000','75','1991-5-23','4','18','13','55');
+
+Insert into project
+ (`project_id`,`start_date`,`end_date`,`project_description`,`title`,`amount`,`grade`,`grade_date`,`executive_id`,`organisation_id`,`program_id`,`grader_id`)
+values('149','1992-3-12','1995-11-3','The project aims at the development of an Intelligent system in ancient artifact restoration methods','project5','700000','75','1991-5-23','4','18','13','55');
+
+Insert into project
+ (`project_id`,`start_date`,`end_date`,`project_description`,`title`,`amount`,`grade`,`grade_date`,`executive_id`,`organisation_id`,`program_id`,`grader_id`)
+values('150','1992-3-12','1995-11-3','The project aims at the development of an Intelligent system in ancient artifact restoration methods','project6','700000','75','1991-5-23','4','18','13','55');
+
+Insert into project
+ (`project_id`,`start_date`,`end_date`,`project_description`,`title`,`amount`,`grade`,`grade_date`,`executive_id`,`organisation_id`,`program_id`,`grader_id`)
+values('151','1992-3-12','1995-11-3','The project aims at the development of an Intelligent system in ancient artifact restoration methods','project7','700000','75','1991-5-23','4','18','13','55');
+
+Insert into project
+ (`project_id`,`start_date`,`end_date`,`project_description`,`title`,`amount`,`grade`,`grade_date`,`executive_id`,`organisation_id`,`program_id`,`grader_id`)
+values('152','1992-3-12','1995-11-3','The project aims at the development of an Intelligent system in ancient artifact restoration methods','project8','700000','75','1991-5-23','4','18','13','55');
+
+Insert into project
+ (`project_id`,`start_date`,`end_date`,`project_description`,`title`,`amount`,`grade`,`grade_date`,`executive_id`,`organisation_id`,`program_id`,`grader_id`)
+values('153','1993-3-12','1995-11-3','The project aims at the development of an Intelligent system in ancient artifact restoration methods','project1','700000','75','1991-5-23','4','18','13','55');
+
+Insert into project
+ (`project_id`,`start_date`,`end_date`,`project_description`,`title`,`amount`,`grade`,`grade_date`,`executive_id`,`organisation_id`,`program_id`,`grader_id`)
+values('154','1993-3-12','1995-11-3','The project aims at the development of an Intelligent system in ancient artifact restoration methods','project2','700000','75','1991-5-23','5','18','14','55');
+
+Insert into project
+ (`project_id`,`start_date`,`end_date`,`project_description`,`title`,`amount`,`grade`,`grade_date`,`executive_id`,`organisation_id`,`program_id`,`grader_id`)
+values('155','1993-3-12','1995-11-3','The project aims at the development of an Intelligent system in ancient artifact restoration methods','project3','700000','75','1991-5-23','4','18','13','55');
+
+Insert into project
+ (`project_id`,`start_date`,`end_date`,`project_description`,`title`,`amount`,`grade`,`grade_date`,`executive_id`,`organisation_id`,`program_id`,`grader_id`)
+values('156','1993-3-12','1995-11-3','The project aims at the development of an Intelligent system in ancient artifact restoration methods','project4','700000','75','1991-5-23','4','18','13','55');
+
+Insert into project
+ (`project_id`,`start_date`,`end_date`,`project_description`,`title`,`amount`,`grade`,`grade_date`,`executive_id`,`organisation_id`,`program_id`,`grader_id`)
+values('157','1993-3-12','1995-11-3','The project aims at the development of an Intelligent system in ancient artifact restoration methods','project5','700000','75','1991-5-23','4','18','13','55');
+
+Insert into project
+ (`project_id`,`start_date`,`end_date`,`project_description`,`title`,`amount`,`grade`,`grade_date`,`executive_id`,`organisation_id`,`program_id`,`grader_id`)
+values('158','1993-3-12','1995-11-3','The project aims at the development of an Intelligent system in ancient artifact restoration methods','project6','700000','75','1991-5-23','4','18','13','55');
+
+Insert into project
+ (`project_id`,`start_date`,`end_date`,`project_description`,`title`,`amount`,`grade`,`grade_date`,`executive_id`,`organisation_id`,`program_id`,`grader_id`)
+values('159','1993-3-12','1995-11-3','The project aims at the development of an Intelligent system in ancient artifact restoration methods','project7','700000','75','1991-5-23','4','18','13','55');
+
+Insert into project
+ (`project_id`,`start_date`,`end_date`,`project_description`,`title`,`amount`,`grade`,`grade_date`,`executive_id`,`organisation_id`,`program_id`,`grader_id`)
+values('160','1993-3-12','1995-11-3','The project aims at the development of an Intelligent system in ancient artifact restoration methods','project8','700000','75','1991-5-23','4','18','13','55');
+
 Insert into deliverable
  (`deliverable_id`,`project_id`,`title`,`deliverable_description`,`delivery_date`)
 values('1','144','Deliverable 1','This is deliverable 1','1994-7-31');
