@@ -217,7 +217,6 @@ def top_researchers():
 def execute_crud(connection, query, cursor): 
     cursor.execute(query)
     connection.commit()
-    print("inserted")
    
 @app.route('/crud_page', methods=['POST']) 
 def crud_page():
@@ -312,5 +311,108 @@ def project_update():
     
     return render_template("crud_page.html")
  
+@app.route('/researcher_project_insert', methods=['POST'])
+def researcher_project_insert():
+    start_date = request.form['start_date']
+    title = request.form['title']
+    first_name = request.form['first_name']
+    last_name = request.form['last_name']
+    
+    execute_crud(connection, queries.insert_researcher_project(start_date, title, first_name, last_name), cursor)
+    
+    return render_template("crud_page.html")
+    
+@app.route('/researcher_project_delete', methods=['POST'])
+def researcher_project_delete():
+    start_date = request.form['start_date']
+    title = request.form['title']
+    first_name = request.form['first_name']
+    last_name = request.form['last_name']
+    
+    execute_crud(connection, queries.delete_researcher_project(start_date, title, first_name, last_name), cursor)
+    
+    return render_template("crud_page.html")
+    
+@app.route('/researcher_remove', methods=['POST'])
+def researcher_remove():
+    first_name = request.form['first_name']
+    last_name = request.form['last_name']
+    
+    execute_crud(connection, queries.remove_researcher_researcher_project(first_name, last_name), cursor)
+    
+    return render_template("crud_page.html") 
+
+@app.route('/project_remove', methods=['POST'])
+def project_remove():
+    title = request.form['title']
+    start_date = request.form['start_date']
+    
+    execute_crud(connection, queries.remove_project_researcher_project(title, start_date), cursor)
+    
+    return render_template("crud_page.html")     
+ 
+ 
+@app.route('/project_field_insert', methods=['POST'])
+def project_field_insert():
+    start_date = request.form['start_date']
+    title = request.form['title']
+    field = request.form['field']
+    
+    execute_crud(connection, queries.insert_project_field(start_date, title, field), cursor)
+    
+    return render_template("crud_page.html") 
+    
+@app.route('/project_field_delete', methods=['POST'])
+def project_field_delete():
+    start_date = request.form['start_date']
+    title = request.form['title']
+    field = request.form['field']
+    
+    execute_crud(connection, queries.delete_project_field(start_date, title, field), cursor)
+    
+    return render_template("crud_page.html")
+
+@app.route('/project_field_remove', methods=['POST'])
+def project_field_remove():
+    start_date = request.form['start_date']
+    title = request.form['title']
+    
+    execute_crud(connection, queries.remove_project_project_field(start_date, title), cursor)
+    
+    return render_template("crud_page.html")    
+
+@app.route('/deliverable_insert', methods=['POST'])
+def deliverable_insert():
+    start_date = request.form['start_date']
+    title = request.form['title']
+    del_title = request.form['del_title']
+    desc = request.form['desc']
+    del_id = request.form['del_id']
+    del_date = request.form['del_date']
+    
+
+    execute_crud(connection, queries.insert_deliverable(start_date, title, del_title, desc, del_id, del_date), cursor)
+    
+    return render_template("crud_page.html") 
+
+@app.route('/deliverable_delete', methods=['POST'])
+def deliverable_delete():
+    start_date = request.form['start_date']
+    title = request.form['title']
+    del_id = request.form['del_id']
+    
+    execute_crud(connection, queries.delete_deliverable(start_date, title, del_id), cursor)
+    
+    return render_template("crud_page.html")
+
+@app.route('/deliverables_remove', methods=['POST'])
+def project_deliverable_remove():
+    start_date = request.form['start_date']
+    title = request.form['title']
+    
+    execute_crud(connection, queries.remove_project_deliverable(start_date, title), cursor)
+    
+    return render_template("crud_page.html")
+
 if __name__ == "__main__":
     app.run(debug=True)

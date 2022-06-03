@@ -89,4 +89,33 @@ def delete_project(title, start_date):
 def update_project(selected_title, selected_start_date, start_date,end_date,description,title,amount,grade,grade_date,executive_id,org_id,grader_id,program_id):
     return "update project set start_date='" + start_date + "', end_date='" + end_date + "',project_description='" + description + "',title='" + title + "',amount='" + amount + "',grade='" + grade + "',grade_date='" + grade_date + "',executive_id='"+ executive_id + "',organisation_id='" + org_id + "',grader_id='" + grader_id + "',program_id='" + program_id + "' where start_date='" + selected_start_date + "' and title='" + selected_title + "'"
 
- 
+def insert_researcher_project(start_date, title, first_name, last_name):
+    return "insert into researcher_project(`researcher_id`, `project_id`) values ((select researcher_id from researcher where first_name='" + first_name + "' and last_name='" + last_name + "'), (select project_id from project where title='" + title + "' and start_date='" + start_date + "'))"
+    
+def delete_researcher_project(start_date, title, first_name, last_name):
+    return "delete from researcher_project where researcher_id = (select researcher_id from researcher where first_name='" + first_name + "' and last_name='" + last_name + "') and project_id=(select project_id from project where title='" + title + "' and start_date='" + start_date + "')"
+    
+def remove_researcher_researcher_project(first_name, last_name):
+    return "delete from researcher_project where researcher_id = (select researcher_id from researcher where first_name='" + first_name + "'and last_name='" + last_name + "')"
+    
+def remove_project_researcher_project(title, start_date):
+    return "delete from researcher_project where project_id = (select project_id from project where title='" + title + "'and start_date='" + start_date + "')"
+    
+def insert_project_field(start_date, title, field):
+    return "insert into project_field(`project_id`, `field_id`) values ((select project_id from project where start_date = '" + start_date + "' and title='" + title + "'), (select field_id from research_field where title='" + field + "'))"
+    
+def delete_project_field(start_date, title, field):
+    return "delete from project_field where project_id=(select project_id from project where start_date = '" + start_date + "' and title='" + title + "') and field_id= (select field_id from research_field where title='" + field + "')"
+    
+def remove_project_project_field(start_date, title):
+    return "delete from project_field where project_id=(select project_id from project where start_date = '" + start_date + "' and title='" + title + "')"
+    
+def insert_deliverable(start_date, title, del_title, desc, del_id, del_date):
+    return "insert into deliverable(`project_id`,`deliverable_id`,`title`,`deliverable_description`,`delivery_date`) values ((select project_id from project where title = '" + title + "' and start_date='" + start_date + "'), " + del_id + ", '" + del_title + "', '" + desc + "', '" + del_date + "')"
+    
+def delete_deliverable(start_date, title,del_id):   
+    return "delete from deliverable where project_id = (select project_id from project where title = '" + title + "' and start_date='" + start_date + "') and deliverable_id=" + del_id
+    
+def remove_project_deliverable(start_date, title):
+    return "delete from deliverable where project_id = (select project_id from project where title = '" + title + "' and start_date='" + start_date + "')"
+    
