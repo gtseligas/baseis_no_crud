@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>
+		Table content
+	</title>
+	
+	<style>
+		table, th, td {
+		border:1px solid black;
+		}
+	</style>
+</head>
+
+<body>
+
+	<table>
+	  {% for j in range(N) %}
+		<th>{{ header[j] }}</th>
+	  {% endfor %}		
+	  {% for t in result %}
+		<tr>
+		{% for j in range(N) %}
+			<td>{{t[j]}}</td>
+		{% endfor %}
+		</tr>
+	  {% endfor %}
+	</table>
+</body>
+
+</html>
