@@ -40,8 +40,10 @@ CREATE TABLE researcher
   hire_date DATE NOT NULL,
   organisation_id INT UNSIGNED NOT NULL,
   PRIMARY KEY (researcher_id),
+  UNIQUE (first_name,last_name),
   KEY idx_fk_organisation_id (organisation_id),
   KEY idx_fk_researcher (researcher_id),
+  KEY idx_superkey_first_last (first_name, last_name),
   CONSTRAINT fk_researcher_organisation FOREIGN KEY (organisation_id) 
 	REFERENCES organisation(organisation_id) ON DELETE RESTRICT ON UPDATE CASCADE
 );
@@ -122,6 +124,7 @@ CREATE TABLE project
   program_id INT UNSIGNED NOT NULL,
   grader_id INT UNSIGNED NOT NULL,
   PRIMARY KEY (project_id),
+  UNIQUE (title,start_date),
   KEY idx_fk_executive (executive_id),
   KEY idx_fk_organisation (organisation_id),
   KEY idx_fk_program (program_id),

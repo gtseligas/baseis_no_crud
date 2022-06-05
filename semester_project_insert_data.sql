@@ -2174,7 +2174,7 @@ values('16','2021-12-23','2023-3-28','The goal of the project is to study, desig
 
 Insert into project
  (`project_id`,`start_date`,`end_date`,`project_description`,`title`,`amount`,`grade`,`grade_date`,`executive_id`,`organisation_id`,`program_id`,`grader_id`)
-values('17','2021-12-23','2023-3-28','The goal of the project is to study, design and develop a novel system inpower distribution and smart energy production methods','QUEENS0','100000','91','2003-5-7','11','25','15','76');
+values('17','2021-12-22','2023-3-28','The goal of the project is to study, design and develop a novel system inpower distribution and smart energy production methods','QUEENS0','100000','91','2003-5-7','11','25','15','76');
 
 Insert into deliverable
  (`deliverable_id`,`project_id`,`title`,`deliverable_description`,`delivery_date`)
